@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "app",
+    "name": "BodyCam",
+    "description": "",
     "slug": "app",
     "version": "1.0.0",
     "orientation": "portrait",

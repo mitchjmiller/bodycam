@@ -37,7 +37,9 @@ module.exports = {
       'error',
       'always'
     ],
-    'no-trailing-spaces': 'error'     ,
-    'react-native/sort-styles': 'off'
+    'no-trailing-spaces': 'error',
+    'react/prop-types': 0,
+    'react-native/sort-styles': 0,
+    'react-native/no-color-literals': 0
   }
 };

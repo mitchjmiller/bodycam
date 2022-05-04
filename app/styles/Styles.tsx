@@ -1,10 +1,10 @@
-import{ StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
     padding: 12
   },
-  label:{
+  label: {
     marginLeft: 8,
     fontWeight: 'bold'
   },
@@ -14,6 +14,6 @@ export default StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     marginBottom: 12,
-    backgroundColor: 'white'
-  },
+    backgroundColor: '#ffffff'
+  }
 });

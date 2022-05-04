@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import {
-  StyleSheet, Text, View, TouchableOpacity
-} from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
+import AppLoading from 'expo-app-loading';
+
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function RecordScreen() {
   const [hasPermissions, setHasPermissions] = useState(false);
@@ -30,14 +31,14 @@ export default function RecordScreen() {
   }, []);
 
   if (hasPermissions === false) {
-    return <Text>Permissions for camera and microphone are required to record</Text>;
+    return <AppLoading />;
   }
 
   return (
     <View style={styles.container}>
       <Camera style={styles.camera} type={type}>
-
         <View style={styles.buttonContainer}>
+
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
@@ -48,10 +49,10 @@ export default function RecordScreen() {
               );
             }}
           >
-            <Text style={styles.text}> Flip </Text>
+            <MaterialCommunityIcons name={type === Camera.Constants.Type.back ? 'camera-rear-variant' : 'camera-front-variant'} color="white" size={40} />
           </TouchableOpacity>
-        </View>
 
+        </View>
       </Camera>
     </View>
   );
@@ -67,16 +68,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     flex: 1,
     flexDirection: 'row',
-    margin: 20
+    justifyContent: 'flex-end',
+    margin: 32
   },
   camera: {
     flex: 1
   },
   container: {
     flex: 1
-  },
-  text: {
-    color: '#ffffff',
-    fontSize: 18
   }
 });

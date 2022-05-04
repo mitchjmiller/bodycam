@@ -2,10 +2,10 @@ import { View, Text } from 'react-native';
 
 import Styles from '../styles/Styles';
 
-export default function ProfileScreen() {
+export default function AddContactsScreen() {
   return (
     <View style={Styles.container}>
-      <Text>This is the Profile screen</Text>
+      <Text>This be the Add Contacts screen</Text>
     </View>
   );
 }

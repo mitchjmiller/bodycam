@@ -1,7 +1,6 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import {
-  Button, Text, TextInput, View, StyleSheet
-} from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
 
 import Styles from '../styles/Styles';
 
@@ -12,29 +11,35 @@ type Props = {
 export default function LoginScreen({ navigation }: Props) {
   return (
     <View style={Styles.container}>
-      <Text style={Styles.label}>Email</Text>
-      <TextInput
-        style={Styles.textInput}
+      <TextInput      
+        style={Styles.spacing}
+        dense
+        autoComplete={false}
+        label="E-mail"
+        mode="outlined"
         keyboardType="email-address"
       />
 
-      <Text style={Styles.label}>Password</Text>
       <TextInput
-        style={Styles.textInput}
+        style={Styles.spacing}
+        dense
+        autoComplete={false}
+        label="Password"
+        mode="outlined"
         secureTextEntry
       />
 
       <Button
-        title="Login"
+        mode="contained"
         onPress={() => navigation.replace('Main', { screen: 'Record' })}
-      />
+      >Login</Button>
 
       <Text style={styles.orText}>OR</Text>
 
       <Button
-        title="Create Account"
+        mode="contained"
         onPress={() => navigation.navigate('SignUp')}
-      />
+      >Create Account</Button>
     </View>
   );
 }

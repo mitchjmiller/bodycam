@@ -5,7 +5,7 @@ import Styles from '../styles/Styles';
 export default function LibraryScreen() {
   return (
     <View style={Styles.container}>
-      <Text>{'A good ol\' Library Screen'}</Text>
+      <Text>{'A good ol\' Library screen'}</Text>
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Text, View, StyleSheet } from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import { Button, Text, TextInput } from 'react-native-paper';
 
 import Styles from '../styles/Styles';
 

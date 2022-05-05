@@ -1,0 +1,45 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript/base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/comma-dangle": [
+      1,
+      "never"
+    ],
+    "no-irregular-whitespace": 1,
+    "no-multi-spaces": 1,
+    "no-trailing-spaces": 1,
+    "space-before-blocks": 1,
+    "space-in-parens": 1,
+    "space-infix-ops": 1,
+    "space-unary-ops": 1
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".ts"
+        ]
+      }
+    }
+  }
+}

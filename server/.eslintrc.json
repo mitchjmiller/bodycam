@@ -18,14 +18,18 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "import/extensions": 0,
-    "import/no-extraneous-dependencies": 0,
     "@typescript-eslint/comma-dangle": [
       1,
       "never"
     ],
+    "@typescript-eslint/type-annotation-spacing": 1,
+    "arrow-spacing": 1,
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "keyword-spacing": 1,
     "no-irregular-whitespace": 1,
     "no-multi-spaces": 1,
+    "no-multiple-empty-lines": 1,
     "no-trailing-spaces": 1,
     "space-before-blocks": 1,
     "space-in-parens": 1,

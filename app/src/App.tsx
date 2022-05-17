@@ -1,13 +1,21 @@
 import React from 'react';
-
-import { SafeAreaView, StyleSheet, StatusBar, useColorScheme } from 'react-native';
+import axios from 'axios';
+import Constants from 'expo-constants';
+import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { registerRootComponent } from 'expo';
 
+import Styles from './styles/Styles';
 import { DefaultTheme, DarkTheme } from './styles/Theme';
-import MainNavigator from './navigators/MainNavigator';
-import LoginOrSignUpNavigator from './navigators/LoginOrSignUpNavigator';
+import { MainNavigator } from './navigation/Main.navigator';
+import { LoginOrSignUpNavigator } from './navigation/LoginOrSignUp.navigator';
+import { Snack } from './components/Snack';
+
+const host = Constants.manifest?.extra?.host;
+console.log(`Setting default API host to '${host}'`);
+axios.defaults.baseURL = host;
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +24,7 @@ export default function App() {
 
   return (
     <PaperProvider theme={darkMode ? DarkTheme : DefaultTheme}>
-      <SafeAreaView style={styles.appContainer}>
+      <SafeAreaView style={Styles.flexOne}>
 
         <NavigationContainer theme={darkMode ? DarkTheme : DefaultTheme}>
           <StatusBar translucent={false} />
@@ -26,13 +34,9 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
 
+        <Snack />
       </SafeAreaView>
     </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1
-  }
-});
+registerRootComponent(App);

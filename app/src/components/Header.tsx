@@ -6,7 +6,7 @@ type Props = {
   navigation: NativeStackNavigationProp<any>,
   route: RouteProp<any>,
   options: any
-}
+};
 
 export default function Header({ navigation, route, options }: Props) {
   return (

@@ -2,15 +2,17 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { InjectModel } from '@nestjs/mongoose';
 import { FilterQuery, Model } from 'mongoose';
 import { User, UserDocument } from 'src/users/user.schema';
-import { CreateUserDto } from './users.dto';
+import { CreateUserDto, UpdateUserDto } from './users.dto';
 
 @Injectable()
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
-  async findUsers(query: FilterQuery<User> = {}): Promise<User[]> {
+
+  async findUsers(query: FilterQuery<User> = {}): Promise<UserDocument[]> {
     return this.userModel.find(query, { _id: false });
   }
+
 
   async findUser(id: string): Promise<UserDocument> {
     const query: FilterQuery<User> = { id };
@@ -21,6 +23,7 @@ export class UsersService {
 
     return user;
   }
+
 
   async createUser(userDto: CreateUserDto): Promise<UserDocument> {
     const { email, password } = userDto;
@@ -33,5 +36,11 @@ export class UsersService {
     user.generateId();
     user.setPassword(password);
     return user.save();
+  }
+
+
+  async updateUser(id: string, userDto: UpdateUserDto): Promise<UserDocument> {
+    await this.userModel.updateOne({ id }, userDto);
+    return this.findUser(id);
   }
 }

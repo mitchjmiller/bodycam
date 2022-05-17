@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Header from '../components/Header';
-import LoginScreen from '../screens/LoginScreen';
-import SignUpScreen from '../screens/SignUpScreen';
+import LoginScreen from '../screens/Login.screen';
+import SignUpScreen from '../screens/SignUp.screen';
 
 const Stack = createNativeStackNavigator();
 
-export default function LoginOrSignUpNavigator() {
+export function LoginOrSignUpNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{ header: Header }}

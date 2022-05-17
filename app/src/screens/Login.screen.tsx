@@ -11,17 +11,17 @@ type Props = {
 export default function LoginScreen({ navigation }: Props) {
   return (
     <View style={Styles.container}>
-      <TextInput      
-        style={Styles.spacing}
+      <TextInput
+        style={Styles.spaceAfter}
         dense
-        autoComplete={false}
+        autoComplete={true}
         label="E-mail"
         mode="outlined"
         keyboardType="email-address"
       />
 
       <TextInput
-        style={Styles.spacing}
+        style={Styles.spaceAfter}
         dense
         autoComplete={false}
         label="Password"
@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }: Props) {
 
       <Button
         mode="contained"
-        onPress={() => navigation.replace('Main', { screen: 'Record' })}
+        onPress={() => navigation.replace('Main')}
       >Login</Button>
 
       <Text style={styles.orText}>OR</Text>

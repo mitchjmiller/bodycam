@@ -9,9 +9,10 @@ import { registerRootComponent } from 'expo';
 
 import Styles from './styles/Styles';
 import { DefaultTheme, DarkTheme } from './styles/Theme';
-import { MainNavigator } from './navigation/Main.navigator';
-import { LoginOrSignUpNavigator } from './navigation/LoginOrSignUp.navigator';
 import { Snack } from './components/Snack';
+
+import MainNavigator from './navigation/Main.navigator';
+import LoginOrSignUpNavigator from './navigation/LoginOrSignUp.navigator';
 
 const host = Constants.manifest?.extra?.host;
 console.log(`Setting default API host to '${host}'`);

@@ -10,13 +10,13 @@ export class UsersService {
 
 
   async findUsers(query: FilterQuery<User> = {}): Promise<UserDocument[]> {
-    return this.userModel.find(query, { _id: false });
+    return this.userModel.find(query);
   }
 
 
   async findUser(id: string): Promise<UserDocument> {
     const query: FilterQuery<User> = { id };
-    const user = await this.userModel.findOne(query, { _id: false });
+    const user = await this.userModel.findOne(query);
 
     if (!user)
       throw new NotFoundException('User not found');

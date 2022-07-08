@@ -3,10 +3,10 @@ import { Text } from 'react-native-paper';
 
 import Styles from '../styles/Styles';
 
-export default function AddContactsScreen() {
+export default function AddContactScreen() {
   return (
     <View style={[Styles.container, styles.container]}>
-      <Text>This be the Add Contacts screen</Text>
+      <Text>Add a new Contact</Text>
     </View>
   );
 }

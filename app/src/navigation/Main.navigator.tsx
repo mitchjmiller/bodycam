@@ -1,9 +1,9 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import ContactsNavigator from './Contacts.navigator';
 import RecordScreen from '../screens/Record.screen';
 import LibraryScreen from '../screens/Library.screen';
-import AddContactsScreen from '../screens/AddContacts.screen';
 import ProfileScreen from '../screens/Profile.screen';
 import DashboardScreen from '../screens/Dashboard.screen';
 
@@ -15,7 +15,7 @@ function getIcon(name: string, color: any, size = 26) {
   );
 }
 
-export function MainNavigator() {
+export default function MainNavigator() {
   return (
     <Tab.Navigator backBehavior="none" labeled={false}>
       <Tab.Screen
@@ -34,8 +34,8 @@ export function MainNavigator() {
         options={{ tabBarIcon: ({ color }) => getIcon('camera-wireless', color) }}
       />
       <Tab.Screen
-        name="AddContacts"
-        component={AddContactsScreen}
+        name="ContactsNavigator"
+        component={ContactsNavigator}
         options={{ tabBarIcon: ({ color }) => getIcon('account-multiple', color) }}
       />
       <Tab.Screen
